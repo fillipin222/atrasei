@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora de Juros por Atraso | Atrasei</title>
+  <meta name="description" content="Calcule juros, multa e valor total de boletos, aluguéis e prestações em atraso de forma simples e rápida.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO básico -->
+  <meta name="robots" content="index, follow">
+
+  <!-- Estilo -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      background: #0b3c5d;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    main {
+      max-width: 480px;
+      margin: 30px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background: #2ecc71;
+      color: white;
+      border: none;
+      font-size: 18px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #27ae60;
+    }
+
+    .resultado {
+      margin-top: 20px;
+      background: #ecf9f1;
+      padding: 15px;
+      border-radius: 6px;
+      display: none;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: #777;
+      margin: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Atrasei</h1>
+  <p>Calculadora de juros por atraso</p>
+</header>
+
+<main>
+  <h1>Calcule juros e multa por atraso</h1>
+
+  <label>Valor original (R$)</label>
+  <input type="number" id="valor" placeholder="Ex: 1000">
+
+  <label>Dias em atraso</label>
+  <input type="number" id="dias" placeholder="Ex: 10">
+
+  <label>Multa (%)</label>
+  <input type="number" id="multa" placeholder="Ex: 2">
+
+  <label>Juros ao mês (%)</label>
+  <input type="number" id="juros" placeholder="Ex: 1">
+
+  <button onclick="calcular()">Calcular</button>
+
+  <div class="resultado" id="resultado"></div>
+</main>
+
+<footer>
+  © 2026 Atrasei · Ferramentas financeiras simples
+</footer>
+
+<script>
+function calcular() {
+  const valor = parseFloat(document.getElementById("valor").value);
+  const dias = parseInt(document.getElementById("dias").value);
+  const multa = parseFloat(document.getElementById("multa").value);
+  const juros = parseFloat(document.getElementById("juros").value);
+
+  if (isNaN(valor) || isNaN(dias) || isNaN(multa) || isNaN(juros)) {
+    alert("Preencha todos os campos corretamente.");
+    return;
+  }
+
+  const valorMulta = valor * (multa / 100);
+  const jurosDia = (juros / 100) / 30;
+  const valorJuros = valor * jurosDia * dias;
+  const total = valor + valorMulta + valorJuros;
+
+  const resultado = document.getElementById("resultado");
+  resultado.style.display = "block";
+  resultado.innerHTML = `
+    <strong>Resultado:</strong><br>
+    Multa: R$ ${valorMulta.toFixed(2)}<br>
+    Juros: R$ ${valorJuros.toFixed(2)}<br>
+    <strong>Total a pagar: R$ ${total.toFixed(2)}</strong>
+  `;
+}
+</script>
+
+</body>
+</html>
