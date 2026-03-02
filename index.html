@@ -4,60 +4,163 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
- <title>Calculadora de Juros por Atraso | Boleto, Aluguel e Prestação</title>
-  <p style="font-size:14px; color:#555; margin-top:20px; line-height:1.6;">
-A calculadora de juros por atraso do Atrasei foi criada para ajudar pessoas a calcular, de forma simples e rápida, 
-o valor atualizado de boletos, aluguéis e prestações vencidas.
+  <title>Calculadora de Juros por Atraso | Boleto, Aluguel e Prestação</title>
 
-Informe o valor original da dívida, a quantidade de dias em atraso e a taxa de juros mensal para obter o valor final 
-com juros aplicados. Os cálculos seguem práticas comuns utilizadas no mercado brasileiro, servindo apenas como referência.
-
-Esta ferramenta é útil para quem deseja entender quanto pagará a mais em caso de atraso e se organizar melhor financeiramente.
-</p>
-  <meta name="description" content="Calcule juros por atraso de boleto, aluguel ou prestação. Informe o valor, dias de atraso e taxa mensal e veja o total com juros aplicados." />
-
-  <meta name="description" content="Calcule juros por atraso de boleto, aluguel ou prestação. Ferramenta simples, gratuita e online.">
+  <meta name="description" content="Calcule juros por atraso de boleto, aluguel ou prestação. Ferramenta simples, gratuita e online para simular valores atualizados.">
   <meta name="robots" content="index, follow">
 
   <meta name="google-site-verification" content="E0T8EQx30nv-6VBvfqjikxvOXZOBwfG0tK_ODnVc8FQ" />
 
-  <!-- Performance -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    }
 
-  <!-- Psicologia das cores: confiança + finanças -->
- <style>
-* {
-  box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-}
+    body {
+      margin: 0;
+      background: #f4f6f8;
+      color: #333;
+    }
 
-body {
-  margin: 0;
-  background: #f4f6f8;
-  color: #333;
-}
+    .container {
+      max-width: 480px;
+      margin: 40px auto;
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
 
-.container {
-  max-width: 420px;
-  margin: 40px auto;
-  background: #fff;
-  padding: 24px;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-}
+    h1 {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 8px;
+      color: #1f2937;
+    }
 
-h1 {
-  text-align: center;
-  font-size: 22px;
-  margin-bottom: 10px;
-}
+    h2 {
+      text-align: center;
+      font-size: 15px;
+      font-weight: normal;
+      color: #555;
+      margin-bottom: 24px;
+    }
 
-p.sub {
-  text-align: center;
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 24px;
+    p {
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 16px;
+      color: #555;
+    }
+
+    label {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 18px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      background: #2563eb;
+      color: #ffffff;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+
+    .resultado {
+      margin-top: 20px;
+      background: #f1f5f9;
+      padding: 14px;
+      border-radius: 8px;
+      font-weight: 500;
+    }
+
+    .info {
+      margin-top: 24px;
+      font-size: 13px;
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>Calculadora de Juros por Atraso</h1>
+    <h2>Descubra quanto um boleto, aluguel ou prestação atrasada realmente custa</h2>
+
+    <p>
+      A calculadora de juros por atraso do <strong>Atrasei</strong> foi criada para ajudar pessoas a calcular,
+      de forma simples e rápida, o valor atualizado de dívidas vencidas.
+    </p>
+
+    <p>
+      Informe o valor original, os dias de atraso e a taxa de juros mensal para simular o valor final.
+      Os cálculos seguem práticas comuns do mercado brasileiro e servem como referência.
+    </p>
+
+    <label for="valor">Valor original (R$)</label>
+    <input type="number" id="valor" placeholder="Ex: 1000">
+
+    <label for="dias">Dias em atraso</label>
+    <input type="number" id="dias" placeholder="Ex: 30">
+
+    <label for="juros">Juros mensal (%)</label>
+    <input type="number" id="juros" placeholder="Ex: 2">
+
+    <button onclick="calcular()">Calcular juros</button>
+
+    <div id="resultado" class="resultado"></div>
+
+    <div class="info">
+      <p>
+        Esta ferramenta é gratuita, não exige cadastro e não possui vínculo com bancos ou instituições financeiras.
+      </p>
+    </div>
+
+  </div>
+
+  <script>
+    function calcular() {
+      const valor = parseFloat(document.getElementById('valor').value);
+      const dias = parseInt(document.getElementById('dias').value);
+      const juros = parseFloat(document.getElementById('juros').value) / 100;
+
+      if (isNaN(valor) || isNaN(dias) || isNaN(juros)) {
+        document.getElementById('resultado').innerText = 'Preencha todos os campos corretamente.';
+        return;
+      }
+
+      const jurosDia = juros / 30;
+      const total = valor + (valor * jurosDia * dias);
+
+      document.getElementById('resultado').innerText =
+        'Valor atualizado: R$ ' + total.toFixed(2).replace('.', ',');
+    }
+  </script>
+
+</body>
+</html>  margin-bottom: 24px;
 }
 
 label {
