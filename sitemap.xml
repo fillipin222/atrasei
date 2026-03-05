@@ -1,24 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <url>
-    <loc>https://fillipin222.github.io/atrasei/</loc>
-    <priority>1.0</priority>
-  </url>
+<url>
+<loc>https://atrasei.com/</loc>
+</url>
 
-  <url>
-    <loc>https://fillipin222.github.io/atrasei/sobre.html</loc>
-    <priority>0.6</priority>
-  </url>
+<url>
+<loc>https://atrasei.com/ferramentas.html</loc>
+</url>
 
-  <url>
-    <loc>https://fillipin222.github.io/atrasei/privacidade.html</loc>
-    <priority>0.5</priority>
-  </url>
+<url>
+<loc>https://atrasei.com/multa-atraso.html</loc>
+</url>
 
-  <url>
-    <loc>https://fillipin222.github.io/atrasei/contato.html</loc>
-    <priority>0.5</priority>
-  </url>
+<url>
+<loc>https://atrasei.com/juros-cartao.html</loc>
+</url>
 
-</urlset> 
+<url>
+<loc>https://atrasei.com/juros-compostos.html</loc>
+</url>
+
+<url>
+<loc>https://atrasei.com/sobre.html</loc>
+</url>
+
+<url>
+<loc>https://atrasei.com/contato.html</loc>
+</url>
+
+<url>
+<loc>https://atrasei.com/politica-de-privacidade.html</loc>
+</url>
+
+</urlset>
