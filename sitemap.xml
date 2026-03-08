@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml version="1.0" encoding="UTF-8"?>
 
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
@@ -12,27 +11,11 @@
 </url>
 
 <url>
-<loc>https://atrasei.com/multa-atraso.html</loc>
-</url>
-
-<url>
 <loc>https://atrasei.com/juros-cartao.html</loc>
 </url>
 
 <url>
 <loc>https://atrasei.com/juros-compostos.html</loc>
-</url>
-
-<url>
-<loc>https://atrasei.com/sobre.html</loc>
-</url>
-
-<url>
-<loc>https://atrasei.com/contato.html</loc>
-</url>
-
-<url>
-<loc>https://atrasei.com/politica-de-privacidade.html</loc>
 </url>
 
 </urlset>
