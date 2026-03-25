@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,127 +10,263 @@
 <meta name="description" content="Calcule quanto sua dívida do cartão de crédito pode crescer com juros mensais. Simule rapidamente o valor total da dívida.">
 
 <style>
-body{
-font-family: Arial, Helvetica, sans-serif;
-background:#f4f6f8;
-margin:0;
-padding:0;
-color:#333;
+* {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
 }
 
-.container{
-max-width:600px;
-margin:40px auto;
-background:#fff;
-padding:25px;
-border-radius:10px;
-box-shadow:0 8px 20px rgba(0,0,0,0.08);
+body {
+  margin: 0;
+  background: #f4f6f8;
+  color: #333;
 }
 
-h1{
-text-align:center;
+.header {
+  width: 100%;
+  padding: 12px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: center;
+  font-weight: 600;
 }
 
-label{
-display:block;
-margin-top:15px;
-font-weight:bold;
+.header a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #1a73e8;
 }
 
-input{
-width:100%;
-padding:10px;
-margin-top:5px;
-font-size:16px;
+.container {
+  max-width: 480px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
-button{
-margin-top:20px;
-width:100%;
-padding:12px;
-background:#1a73e8;
-color:white;
-border:none;
-border-radius:6px;
-font-size:16px;
-cursor:pointer;
+h1 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 8px;
+  color: #1f2937;
 }
 
-button:hover{
-background:#0f9d58;
+h2 {
+  text-align: center;
+  font-size: 15px;
+  font-weight: normal;
+  color: #555;
+  margin-bottom: 24px;
 }
 
-.resultado{
-margin-top:20px;
-padding:15px;
-background:#f1f5f9;
-border-radius:6px;
+p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  color: #555;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 18px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+.resultado {
+  margin-top: 20px;
+  background: #f1f5f9;
+  padding: 14px;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.cta-box {
+  margin-top: 30px;
+  padding: 18px;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.cta-btn {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 12px 20px;
+  background: #16a34a;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+.cross-link {
+  margin-top: 25px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.info {
+  margin-top: 24px;
+  font-size: 13px;
+  color: #666;
+}
+
+footer {
+  margin-top: 40px;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  background: #f4f6f8;
 }
 </style>
 </head>
-<hr>
-  
-  <hr>
 
 <body>
 
+<!-- HEADER -->
+<div class="header">
+  <a href="/">Juros por atraso</a>
+  <a href="/multa-por-atraso.html">Multa</a>
+  <a href="/ferramentas.html">Ferramentas</a>
+</div>
+
 <div class="container">
 
+<!-- HERO -->
 <h1>Calculadora de Juros do Cartão de Crédito</h1>
+<h2>Descubra quanto sua dívida pode crescer com o tempo</h2>
 
-<p>Simule quanto uma dívida do cartão de crédito pode crescer ao longo do tempo com juros mensais.</p>
+<!-- TEXTO SEO -->
+<p>
+O cartão de crédito possui uma das maiores taxas de juros do mercado. Quando a fatura não é paga integralmente, os juros começam a acumular rapidamente.
+</p>
 
+<p>
+Use a calculadora abaixo para simular quanto sua dívida pode crescer ao longo dos meses.
+</p>
+
+<!-- INPUTS -->
 <label>Valor da dívida (R$)</label>
-<input type="number" id="valor">
+<input type="number" id="valor" placeholder="Ex: 1000">
 
 <label>Taxa de juros mensal (%)</label>
-<input type="number" id="juros">
+<input type="number" id="juros" placeholder="Ex: 12">
 
 <label>Número de meses</label>
-<input type="number" id="meses">
+<input type="number" id="meses" placeholder="Ex: 6">
 
 <button onclick="calcular()">Calcular dívida</button>
 
+<!-- RESULTADO -->
 <div class="resultado" id="resultado"></div>
 
-<h2>Como funcionam os juros do cartão</h2>
+<!-- CTA -->
+<div class="cta-box">
+  <p>
+    Se sua dívida está crescendo mês após mês, o problema pode não ser só o juros, mas a falta de controle financeiro.
+  </p>
 
-<p>O cartão de crédito costuma ter uma das maiores taxas de juros do mercado. Quando o valor total da fatura não é pago, os juros passam a ser aplicados mensalmente sobre o saldo devedor.</p>
+  <a href="https://go.hotmart.com/L104737163B"
+     target="_blank"
+     rel="nofollow sponsored"
+     class="cta-btn">
+    Organizar minha vida financeira
+  </a>
+</div>
 
-<p>Essa calculadora ajuda a simular quanto uma dívida pode crescer ao longo do tempo caso os juros continuem sendo aplicados mensalmente.</p>
+<!-- CROSS LINK -->
+<div class="cross-link">
+  <p>Veja também:</p>
+  <a href="/">➜ Calcular juros por atraso</a><br>
+  <a href="/multa-por-atraso.html">➜ Calcular multa por atraso</a>
+</div>
+
+<!-- SEO LONGO -->
+<div class="info">
+  <h2>Como funcionam os juros do cartão</h2>
+
+  <p>
+    Quando você não paga o valor total da fatura do cartão, o saldo restante entra no crédito rotativo, onde os juros são aplicados mensalmente.
+  </p>
+
+  <p>
+    Esses juros são compostos, ou seja, incidem sobre o valor total acumulado, fazendo com que a dívida cresça rapidamente ao longo do tempo.
+  </p>
+
+  <p>
+    Por isso, entender o impacto dos juros e simular cenários pode ajudar você a tomar decisões melhores e evitar o aumento descontrolado da dívida.
+  </p>
+</div>
 
 </div>
 
+<!-- SCRIPT -->
 <script>
-
 function calcular(){
+  let valor = parseFloat(document.getElementById("valor").value);
+  let juros = parseFloat(document.getElementById("juros").value)/100;
+  let meses = parseInt(document.getElementById("meses").value);
 
-let valor = parseFloat(document.getElementById("valor").value);
+  if(isNaN(valor) || isNaN(juros) || isNaN(meses)){
+    document.getElementById("resultado").innerText = "Preencha todos os campos corretamente.";
+    return;
+  }
 
-let juros = parseFloat(document.getElementById("juros").value)/100;
+  let total = valor * Math.pow((1+juros), meses);
 
-let meses = parseInt(document.getElementById("meses").value);
-
-let total = valor * Math.pow((1+juros), meses);
-
-document.getElementById("resultado").innerHTML =
-"Valor aproximado da dívida após "+meses+" meses: <b>R$ "+total.toFixed(2)+"</b>";
-
+  document.getElementById("resultado").innerHTML =
+  "Valor aproximado após "+meses+" meses: R$ " + total.toFixed(2).replace(".", ",");
 }
-
 </script>
-<hr>
 
+<!-- FOOTER PADRÃO -->
 <footer>
-<p>
-<a href="/">Início</a> |
-<a href="/ferramentas.html">Ferramentas</a> |
-<a href="/sobre.html">Sobre</a> |
-<a href="/contato.html">Contato</a> |
-<a href="/politica-de-privacidade.html">Política de Privacidade</a>
-</p>
 
-<p>© 2026 Atrasei.com</p>
+  <div style="margin-bottom: 15px;">
+    <strong>Ferramentas financeiras:</strong><br>
+
+    <a href="/ferramentas.html"
+       style="display:inline-block;margin-top:8px;color:#1a73e8;font-weight:600;text-decoration:none;">
+      ➜ Ver todas as ferramentas
+    </a>
+  </div>
+
+  <div>
+    <a href="/politica-de-privacidade.html">Política de Privacidade</a> |
+    <a href="/sobre.html">Sobre</a> |
+    <a href="/contato.html">Contato</a>
+  </div>
+
 </footer>
+
 </body>
 </html>
